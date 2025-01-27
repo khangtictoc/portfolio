@@ -32,7 +32,7 @@ jobs:
         run: |
           git config --global user.name "${{ env.GITHUB_USERNAME }}"
           git config --global user.email "${{ env.GITHUB_EMAIL }}"
-          git@github.com:khangtictoc/portfolio.khangtictoc.github.io.git
+          git remote add origin git@github.com:khangtictoc/portfolio.khangtictoc.github.io.git
 
       - name: Deploy to GitHub Pages
         env:
