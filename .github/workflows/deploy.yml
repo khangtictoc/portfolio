@@ -30,7 +30,7 @@ jobs:
 
       - name: Debug
         run: |
-          git remote -v
+          git config --list | grep user
 
       - name: Prepare Identity for Deploy to GitHub Pages
         run: |
