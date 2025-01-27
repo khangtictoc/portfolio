@@ -33,7 +33,7 @@ jobs:
         run: |
           git config --global user.name "${{ env.GITHUB_USERNAME }}"
           git config --global user.email "${{ env.GITHUB_EMAIL }}"
-          git remote set-url origin https://x-access-token:${{ secrets.PAT_GITHUB }}@github.com/khangtictoc/portfolio.khangtictoc.github.io
+          git remote set-url origin https://khangtictoc:${{ secrets.PAT_GITHUB }}@github.com/khangtictoc/portfolio.khangtictoc.github.io
 
       - name: Deploy to GitHub Pages
         env:
