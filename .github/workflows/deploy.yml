@@ -26,12 +26,13 @@ jobs:
         run: npm install
 
       - name: Build the React app
-        run: npm run build
+        run: npm run predeploy
 
       - name: Prepare Identity for Deploy to GitHub Pages
         run: |
           git config --global user.name "${{ env.GITHUB_USERNAME }}"
           git config --global user.email "${{ env.GITHUB_EMAIL }}"
+          git remote set-url origin "https://github.com/khangtictoc/portfolio.khangtictoc.github.io.git"
 
       - name: Deploy to GitHub Pages
         env:
