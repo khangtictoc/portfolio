@@ -9,6 +9,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    env:
+      GITHUB_USERNAME: khangtictoc
+      GITHUB_EMAIL: tranhoangkhang09112001@gmail.com
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -23,6 +27,11 @@ jobs:
 
       - name: Build the React app
         run: npm run build
+
+      - name: Prepare Identity for Deploy to GitHub Pages
+        run: |
+          git config --global user.name "${{ env.GITHUB_USERNAME }}"
+          git config --global user.email "${{ env.GITHUB_EMAIL }}"
 
       - name: Deploy to GitHub Pages
         env:
