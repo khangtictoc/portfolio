@@ -27,12 +27,15 @@ jobs:
 
       - name: Build the React app
         run: npm run predeploy
-
+      - name: Debug
+        run: |
+          git remote -v
+          git config --list | grep user
       - name: Prepare Identity for Deploy to GitHub Pages
         run: |
           git config --global user.name "${{ env.GITHUB_USERNAME }}"
           git config --global user.email "${{ env.GITHUB_EMAIL }}"
-          git remote add origin git@github.com:khangtictoc/portfolio.khangtictoc.github.io.git
+          
 
       - name: Deploy to GitHub Pages
         env:
