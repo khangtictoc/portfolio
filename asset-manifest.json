@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/portfolio.khangtictoc.github.io/static/css/main.f855e6bc.css",
-    "main.js": "/portfolio.khangtictoc.github.io/static/js/main.f0bb8393.js",
-    "static/js/488.21a3b654.chunk.js": "/portfolio.khangtictoc.github.io/static/js/488.21a3b654.chunk.js",
-    "static/media/logo.svg": "/portfolio.khangtictoc.github.io/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/portfolio.khangtictoc.github.io/index.html",
-    "main.f855e6bc.css.map": "/portfolio.khangtictoc.github.io/static/css/main.f855e6bc.css.map",
-    "main.f0bb8393.js.map": "/portfolio.khangtictoc.github.io/static/js/main.f0bb8393.js.map",
-    "488.21a3b654.chunk.js.map": "/portfolio.khangtictoc.github.io/static/js/488.21a3b654.chunk.js.map"
+    "main.css": "/portfolio/static/css/main.f855e6bc.css",
+    "main.js": "/portfolio/static/js/main.e020212b.js",
+    "static/js/488.21a3b654.chunk.js": "/portfolio/static/js/488.21a3b654.chunk.js",
+    "static/media/logo.svg": "/portfolio/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/portfolio/index.html",
+    "main.f855e6bc.css.map": "/portfolio/static/css/main.f855e6bc.css.map",
+    "main.e020212b.js.map": "/portfolio/static/js/main.e020212b.js.map",
+    "488.21a3b654.chunk.js.map": "/portfolio/static/js/488.21a3b654.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.f0bb8393.js"
+    "static/js/main.e020212b.js"
   ]
 }
