@@ -32,13 +32,34 @@
   z-index: -1; /* Ensure the background is behind other content */
 }
 
+/* Default cursor */
+body {
+  cursor: url('./assets/cursor_default.png'), auto;
+}
+
+/* Clickable items cursor */
+a, button, .clickable {
+  cursor: url('./assets/cursor_clickable.png'), pointer;
+}
+
 .hamburger-icon {
   position: absolute;
   top: 20px;
   left: 20px;
   cursor: pointer;
   z-index: 1;
-  color: rgb(70, 130, 180);
+  color: white; /* Change the icon color */
+  background-color: rgba(70, 130, 180, 0.8); /* Add a background color */
+  padding: 10px; /* Add padding */
+  border-radius: 50%; /* Make it a circle */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow */
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Add transition for hover effect */
+  cursor: url('./assets/cursor_clickable.png'), pointer;
+}
+
+.hamburger-icon:hover {
+  background-color: rgba(70, 130, 180, 1); /* Change background color on hover */
+  transform: scale(1.1); /* Slightly increase size on hover */
 }
 
 .nav-menu {
@@ -60,12 +81,16 @@
   transform: translateX(0);
 }
 
+FaBars {
+  padding: 10px;
+}
+
 .nav-menu a {
-  color: rgb(137, 207, 240);
+  color: whitesmoke;
   text-decoration: none;
   margin: 10px 0;
   transition: color 0.3s ease-in-out;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Raleway", serif;
   font-size: 14px; 
 }
 
@@ -139,13 +164,15 @@
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3.0rem;
   margin: 0;
   color: rgb(70, 130, 180);
+  font-family: "Raleway", serif;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2.0rem;
   margin: 10px 0 0;
   color: rgb(70, 130, 180);
+  font-family: "Raleway", serif;
 }
