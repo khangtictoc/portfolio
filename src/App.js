@@ -41,7 +41,7 @@ function App() {
             <ul className="space-y-6">
               <li>
                 <a 
-                  href="#" 
+                  href="#home" 
                   className="flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                 >
                   <FontAwesomeIcon icon={faHome} className="text-xl" />
@@ -50,7 +50,7 @@ function App() {
               </li>
               <li>
                 <a 
-                  href="#" 
+                  href="#project" 
                   className="flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                 >
                   <FontAwesomeIcon icon={faCode} className="text-xl" />
@@ -59,7 +59,7 @@ function App() {
               </li>
               <li>
                 <a 
-                  href="#" 
+                  href="#techstack" 
                   className="flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                 >
                   <FontAwesomeIcon icon={faLaptopCode} className="text-xl" />
@@ -68,7 +68,7 @@ function App() {
               </li>
               <li>
                 <a 
-                  href="#" 
+                  href="#achievement" 
                   className="flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                 >
                   <FontAwesomeIcon icon={faTrophy} className="text-xl" />
@@ -77,7 +77,7 @@ function App() {
               </li>
               <li>
                 <a 
-                  href="#" 
+                  href="#education" 
                   className="flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                 >
                   <FontAwesomeIcon icon={faGraduationCap} className="text-xl" />
@@ -94,13 +94,13 @@ function App() {
           <h1 class="profile--intro">Hi! I'm <div class="profile--author-name">TRAN HOANG KHANG</div></h1>
           <p class="profile--role">Long-life DevSecOps Engineer</p>
           <div class="profile--social-links">
-            <a href="https://github.com" target="_blank" class="social--link">
+            <a href="https://github.com" target="_blank" rel="noreferrer" class="social--link">
               <i class="fab fa-github"></i>
             </a>
-            <a href="https://linkedin.com" target="_blank" class="social--link">
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="social--link">
               <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://twitter.com" target="_blank" class="social--link">
+            <a href="https://twitter.com" target="_blank" rel="noreferrer" class="social--link">
               <i class="fab fa-twitter"></i>
             </a>
           </div>
