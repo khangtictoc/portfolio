@@ -1,178 +1,86 @@
-.App {
-  text-align: center;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  animation: fadeIn 1s ease-in-out;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --container--profile--width: 800px; 
+  --container--profile--height: 400px; 
+  --profile--image--width: 200px;
+  --profile--image--height: 200px;
+  --profile--font-family: "Raleway", serif;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
-.App::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('./assets/background.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.5; /* Adjust the opacity value as needed */
-  z-index: -1; /* Ensure the background is behind other content */
-}
-
-/* Default cursor */
 body {
-  cursor: url('./assets/cursor_default.png'), auto;
+  background-image:url('./assets/background.jpg');
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* Clickable items cursor */
-a, button, .clickable {
-  cursor: url('./assets/cursor_clickable.png'), pointer;
-}
-
-.hamburger-icon {
+.background-overlay {
+  background-color: #72A0C1;
   position: absolute;
-  top: 20px;
-  left: 20px;
-  cursor: pointer;
-  z-index: 1;
-  color: white; /* Change the icon color */
-  background-color: rgba(70, 130, 180, 0.8); /* Add a background color */
-  padding: 10px; /* Add padding */
-  border-radius: 50%; /* Make it a circle */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow */
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Add transition for hover effect */
-  cursor: url('./assets/cursor_clickable.png'), pointer;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.5;
 }
 
-.hamburger-icon:hover {
-  background-color: rgba(70, 130, 180, 1); /* Change background color on hover */
-  transform: scale(1.1); /* Slightly increase size on hover */
+.container--website {
+  position: absolute;
+  width: 100%; height: 100%;
+}
+.container--profile {
+  position: absolute;
+  top: 50%; left: 50%;
+  height: var(--container--profile--height);
+  width: var(--container--profile--width);
+  transform: translate(-50%,-50%);
 }
 
-.nav-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200px;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
-}
 
-.nav-menu.show {
-  transform: translateX(0);
-}
-
-FaBars {
-  padding: 10px;
-}
-
-.nav-menu a {
-  color: whitesmoke;
-  text-decoration: none;
-  margin: 10px 0;
-  transition: color 0.3s ease-in-out;
-  font-family: "Raleway", serif;
-  font-size: 14px; 
-}
-
-.nav-menu a i {
-  font-size: 12px;
-  margin-right: 10px;
-}
-
-/* .nav-menu a:hover {
-  color: #ff6347; 
-}
-
-.nav-menu a:nth-child(1) {
-  color: #ff6347; 
-}
-
-.nav-menu a:nth-child(2) {
-  color: #1e90ff; 
-}
-
-.nav-menu a:nth-child(3) {
-  color: #32cd32; 
-}
-
-.nav-menu a:nth-child(4) {
-  color: #ffa500; 
-}
-
-.nav-menu a:nth-child(5) {
-  color: #ff69b4; 
-}
-
-.nav-menu a:nth-child(6) {
-  color: #8a2be2; 
-} */
-
-.main-content {
-  text-align: center;
-  color: white;
-  animation: slideIn 1s ease-in-out;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.profile-image {
-  width: 150px;
-  height: 150px;
+.profile--image {
+  width: var(--profile--image--width);
+  height: var(--profile--image--height);
+  border: clamp(3px, 0.4vw, 5px) solid white;
   border-radius: 50%;
-  margin-bottom: 20px;
-  animation: profileFadeIn 1.5s ease-in-out;
+  position: relative;
+  top: 30%; left: 50%;
+  transform: translate(-50%, -70%);
 }
 
-@keyframes profileFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
+.profile--intro {
+  position: relative;
+  left: 50%; top: 0px;
+  text-align: center;
+  transform: translate(-50%, 0);
+  font-size: 3em;
+  font-family: var(--profile--font-family);
+  color: white;
+}
+
+.profile--intro .profile--author-name {
+  display: inline;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 5px 10px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    box-shadow: 0 0 10px whitesmoke, 0 0 20px whitesmoke;
+    transform: scale(1.05);
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
-h1 {
-  font-size: 3.0rem;
-  margin: 0;
-  color: rgb(70, 130, 180);
-  font-family: "Raleway", serif;
-}
 
-h2 {
-  font-size: 2.0rem;
-  margin: 10px 0 0;
-  color: rgb(70, 130, 180);
-  font-family: "Raleway", serif;
+.profile--role {  
+  position: relative;
+  left: 50%; top: 0px;
+  text-align: center;
+  transform: translate(-50%, 0);
+  font-size: 2.5em;
+  font-family: var(--profile--font-family);
+  color: white;
 }
