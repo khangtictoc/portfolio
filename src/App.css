@@ -84,3 +84,10 @@ body {
   font-family: var(--profile--font-family);
   color: white;
 }
+
+/* Navigation bar */
+
+.container--navbar {
+  position: absolute;
+  top: 0; left: 0;
+}
