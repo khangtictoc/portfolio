@@ -11,14 +11,17 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 import profileImg from './assets/profile.png';
+import profileImgFlipped from './assets/profile-flipped.png';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div>
-      <div class="background-overlay"></div>
-      <header class="container--website">
+      <div className="background-image"></div>
+      <div className="background-overlay"></div>
+      <header className="container--website">
         <div className="relative">
           {/* Hamburger Button */}
           <button
@@ -28,7 +31,7 @@ function App() {
           >
             <FontAwesomeIcon 
               icon={isOpen ? faXmark : faBars} 
-              className="text-2xl text-white hover:text-white transition-colors duration-200"
+              className={`text-2xl text-white hover:text-white transition-colors duration-200 hamburger-icon ${isOpen ? 'open' : ''}`}
             />
           </button>
 
@@ -43,7 +46,7 @@ function App() {
                 <li>
                   <a 
                     href="#home" 
-                    className="flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
+                    className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faHome} className="text-xl" />
                     <span className="font-medium">Home</span>
@@ -52,7 +55,7 @@ function App() {
                 <li>
                   <a 
                     href="#project" 
-                    className="flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
+                    className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faCode} className="text-xl" />
                     <span className="font-medium">Project</span>
@@ -61,7 +64,7 @@ function App() {
                 <li>
                   <a 
                     href="#techstack" 
-                    className="flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
+                    className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faLaptopCode} className="text-xl" />
                     <span className="font-medium">Tech Stack</span>
@@ -70,7 +73,7 @@ function App() {
                 <li>
                   <a 
                     href="#achievement" 
-                    className="flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
+                    className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faTrophy} className="text-xl" />
                     <span className="font-medium">Achievement</span>
@@ -79,7 +82,7 @@ function App() {
                 <li>
                   <a 
                     href="#education" 
-                    className="flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
+                    className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faGraduationCap} className="text-xl" />
                     <span className="font-medium">Education</span>
@@ -89,27 +92,67 @@ function App() {
             </div>
           </nav>
         </div>
-        <div class="container--profile">
-          <img class="profile--image avatar" src={profileImg} alt="profile"  />
-          <h1 class="profile--intro">Hi! I'm <div class="profile--author-name">TRAN HOANG KHANG</div></h1>
-          <p class="profile--role">Long-life DevSecOps Engineer</p>
-          <div class="profile--social-links">
-            <a href="https://github.com" target="_blank" rel="noreferrer" class="social--link">
-              <i class="fab fa-github"></i>
+        <div className="container--profile">
+          <div 
+            className="profile--image avatar" 
+            style={{ backgroundImage: `url(${isHovered ? profileImgFlipped : profileImg})` }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          ></div>
+          <h1 className="profile--intro">Hi! I'm TRAN HOANG KHANG</h1>
+          <p className="profile--role">Professional DevSecOps Engineer & Solution Architect Expert</p>
+          <div className="profile--social-links">
+            <a href="https://github.com/khangtictoc" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-github"></i>
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="social--link">
-              <i class="fab fa-linkedin"></i>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-linkedin"></i>
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" class="social--link">
-              <i class="fab fa-twitter"></i>
+            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-twitter"></i>
+            </a>
+            <a href="https://youtube.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-youtube"></i>
+            </a>
+            <a href="https://facebook.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-facebook"></i>
             </a>
           </div>
         </div>
       </header>
+      <div id="home" className="container--section">
+      </div>
+      <div id="project" className="container--section">
+        <h2 className="section-title">PROJECT</h2>
+        <div className="project-list">
+          <div className="project-item">
+            <h3 className="text-2xl font-semibold text-white">Project 1</h3>
+            <p className="text-white">Description of project 1.</p>
+          </div>
+          <div className="project-item">
+            <h3 className="text-2xl font-semibold text-white">Project 2</h3>
+            <p className="text-white">Description of project 2.</p>
+          </div>
+          <div className="project-item">
+            <h3 className="text-2xl font-semibold text-white">Project 3</h3>
+            <p className="text-white">Description of project 3.</p>
+          </div>
+        </div>
+      </div>
+      <div id="techstack" className="container--section">
+        <h2 className="section-title">TECH STACK</h2>
+        <p className="text-white">Hello world 2</p>
+      </div>
+      <div id="achievement" className="container--section">
+        <h2 className="section-title">ACHIEVEMENT</h2>
+        <p className="text-white">Hello world 3</p>
+      </div>
+      <div id="education" className="container--section">
+        <h2 className="section-title">EDUCATION</h2>
+        <p className="text-white">Hello world 4</p>
+      </div>
     </div>
-    
   );
 }
-
 
 export default App;

@@ -7,6 +7,7 @@ export default {
         extend: {
             colors: {
                 AstrosNavy: '#002D62',
+                MidNightBlue: '#191970',
             },
         },
     },

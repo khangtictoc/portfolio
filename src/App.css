@@ -8,10 +8,13 @@
   --profile--image--width: 200px;
   --profile--image--height: 200px;
   --profile--font-family: "Raleway", serif;
+  --color-chelsea-blue: #034694;
 }
 
-
-body {
+.background-image {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
   background-image:url('./assets/background.jpg');
   background-attachment:fixed;
   background-repeat: no-repeat;
@@ -22,7 +25,7 @@ body {
   background-color: #72A0C1;
   position: absolute;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100vw; height: 100vh;
   opacity: 0.5;
 }
 
@@ -30,6 +33,7 @@ body {
   position: absolute;
   width: 100%; height: 100%;
 }
+
 .container--profile {
   position: absolute;
   top: 50%; left: 50%;
@@ -37,7 +41,6 @@ body {
   width: var(--container--profile--width);
   transform: translate(-50%,-50%);
 }
-
 
 .profile--image {
   width: var(--profile--image--width);
@@ -47,6 +50,13 @@ body {
   position: relative;
   top: 30%; left: 50%;
   transform: translate(-50%, -70%);
+  transition: transform 0.6s, background-image 0.6s;
+  background-size: cover;
+}
+
+.profile--image:hover {
+  border: clamp(3px, 0.4vw, 5px) solid white;
+  transform: translate(-50%, -70%) rotateY(180deg);
 }
 
 .profile--intro {
@@ -54,9 +64,41 @@ body {
   left: 50%; top: 0px;
   text-align: center;
   transform: translate(-50%, 0);
-  font-size: 3em;
+  font-size: 2em;
   font-family: var(--profile--font-family);
   color: white;
+  animation: bounce 2s infinite, scaleEffect 2s infinite; /* Update this line */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translate(-50%, 0);
+  }
+  40% {
+    transform: translate(-50%, -30px);
+  }
+  60% {
+    transform: translate(-50%, -15px);
+  }
+}
+
+
+@keyframes scaleEffect {
+  0%, 100% {
+    transform: translate(-50%, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50%, 0) scale(1.1);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
 
 .profile--intro .profile--author-name {
@@ -65,24 +107,57 @@ body {
   border-radius: 15px;
   padding: 5px 10px;
   transition: all 0.3s ease-in-out;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: white;
-    box-shadow: 0 0 10px whitesmoke, 0 0 20px whitesmoke;
-    transform: scale(1.05);
-  }
 }
 
+.profile--intro {
+  color: var(--color-chelsea-blue);
+  font-weight: bold;
+}
+
+.profile--intro .profile--author-name:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  box-shadow: 0 0 10px whitesmoke, 0 0 20px whitesmoke;
+  transform: scale(1.05);
+}
 
 .profile--role {  
   position: relative;
   left: 50%; top: 0px;
   text-align: center;
   transform: translate(-50%, 0);
+  font-size: 1.5em;
+  font-family: var(--profile--font-family);
+  color: white;
+}
+
+.profile--social-links {  
+  position: relative;
+  width: 200px; height: 50px;
+  left: 50%; top: 0px;
+  text-align: center;
+  transform: translate(-50%, 0);
   font-size: 2.5em;
   font-family: var(--profile--font-family);
   color: white;
+
+  /** Flex box **/
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile--social-links a {
+  color: #333;
+  font-size: 30px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.profile--social-links a:hover {
+  color: #0073b1;
+  animation: zoomIn 0.3s forwards;
 }
 
 /* Navigation bar */
@@ -91,3 +166,38 @@ body {
   position: absolute;
   top: 0; left: 0;
 }
+
+.container--section {
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.nav-item {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-item:hover {
+  transform: translateX(10px);
+  background-color: #1a1a1a; /* Adjust the color as needed */
+}
+
+.hamburger-icon {
+  transition: transform 0.3s ease;
+}
+
+.hamburger-icon.open {
+  transform: rotate(90deg);
+}
+
+/* General Section */
+
+.section-title {
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  color: white;
+  margin: 20px 0;
+}
+
+/* Projects Section */
