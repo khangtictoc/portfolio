@@ -4,7 +4,7 @@
 
 :root {
   --container--profile--width: 800px; 
-  --container--profile--height: 400px; 
+  --container--profile--height: 600px; 
   --profile--image--width: 200px;
   --profile--image--height: 200px;
   --profile--font-family: "Raleway", serif;
@@ -35,28 +35,29 @@
 }
 
 .container--profile {
-  position: absolute;
-  top: 50%; left: 50%;
+  @apply flex flex-col items-center justify-center;
   height: var(--container--profile--height);
   width: var(--container--profile--width);
-  transform: translate(-50%,-50%);
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .profile--image {
   width: var(--profile--image--width);
   height: var(--profile--image--height);
-  border: clamp(3px, 0.4vw, 5px) solid white;
+  border: 3px solid white;
   border-radius: 50%;
-  position: relative;
+  /* position: relative;
   top: 30%; left: 50%;
-  transform: translate(-50%, -70%);
+  transform: translate(-50%, -70%); */
   transition: transform 0.6s, background-image 0.6s;
   background-size: cover;
 }
 
 .profile--image:hover {
-  border: clamp(3px, 0.4vw, 5px) solid white;
-  transform: translate(-50%, -70%) rotateY(180deg);
+  border: 3px solid white;
+  transform: rotateY(180deg);
 }
 
 .profile--intro {
@@ -96,21 +97,21 @@
 }
 
 .profile--role {  
-  position: relative;
+  /* position: relative;
   left: 50%; top: 0px;
+  transform: translate(-50%, 0); */
   text-align: center;
-  transform: translate(-50%, 0);
   font-size: 1.5em;
   font-family: var(--profile--font-family);
   color: white;
 }
 
 .profile--social-links {  
-  position: relative;
-  width: 200px; height: 50px;
-  left: 50%; top: 0px;
-  text-align: center;
+  /* position: relative;
   transform: translate(-50%, 0);
+  left: 50%; top: 0px; */
+  width: 200px; height: 50px;
+  text-align: center;
   font-size: 2.5em;
   font-family: var(--profile--font-family);
   color: white;

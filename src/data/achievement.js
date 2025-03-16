@@ -1,19 +1,19 @@
 const achievements = {
-    "name": "Achievements",
+    "name": "Achievement",
     "data": [
         {
             "name": "Net Challenge",
             "result": "First Prize (2020)",
             "yearDate": "2020",
             "organizer": "University",
-            "description": "A CCNA networking competition - Configuring & troubleshooting network system"
+            "description": "A CCNA networking competition"
         },
         {
-            "name": "Azure 104",
+            "name": "Azure-104",
             "result": "Certified",
             "yearDate": "2022",
             "organizer": "Microsoft",
-            "description": "Administrator Associate - Operating & implementing an organization's cloud infrastructure"
+            "description": "Azure Administrator Associate"
         }
     ]
 }
