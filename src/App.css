@@ -60,14 +60,8 @@
 }
 
 .profile--intro {
-  position: relative;
-  left: 50%; top: 0px;
   text-align: center;
-  transform: translate(-50%, 0);
-  font-size: 2em;
-  font-family: var(--profile--font-family);
-  color: white;
-  animation: bounce 2s infinite, scaleEffect 2s infinite; /* Update this line */
+  font-size: 1em;
 }
 
 @keyframes bounce {
@@ -99,26 +93,6 @@
   to {
     transform: scale(1.2);
   }
-}
-
-.profile--intro .profile--author-name {
-  display: inline;
-  border: 2px solid white;
-  border-radius: 15px;
-  padding: 5px 10px;
-  transition: all 0.3s ease-in-out;
-}
-
-.profile--intro {
-  color: var(--color-chelsea-blue);
-  font-weight: bold;
-}
-
-.profile--intro .profile--author-name:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: white;
-  box-shadow: 0 0 10px whitesmoke, 0 0 20px whitesmoke;
-  transform: scale(1.05);
 }
 
 .profile--role {  
@@ -170,6 +144,11 @@
 .container--section {
   top: 0; left: 0;
   width: 100vw;
+}
+
+.container--section-home {
+  top: 0; left: 0;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -195,9 +174,18 @@
 .section-title {
   width: 100%;
   text-align: center;
-  font-size: 3em;
-  color: white;
+  font-size: 2em;
+  color: black;
   margin: 20px 0;
+  text-transform: uppercase;
 }
 
 /* Projects Section */
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+}
