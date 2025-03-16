@@ -8,7 +8,7 @@ const TerminalTypingWrapper = styled.div`
     border-radius: 12px;
     background-color: #d9d9d92f;
     backdrop-filter: blur(8px);
-    min-width: 600px;
+    min-width: 450px;
     max-width: 600px;
   }
   .wrap {
