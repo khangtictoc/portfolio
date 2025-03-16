@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TextSlidingWrapper from './component/textSliding';
 import FlipCardWrapper from './component/flipCard';
 import TerminalTypingWrapper from './component/terminalTyping';
 import achievements from './data/achievement';
-import { 
-  faHome, 
+
+import {
+  faHome,
   faCode,
-  faLaptopCode, 
+  faLaptopCode,
   faTrophy,
   faGraduationCap,
   faBars,
@@ -15,10 +17,61 @@ import {
   faBuilding,
   faCalendar,
   faCommentMedical,
+  faRoadBridge,
+  faSquareBinary,
+  faLaptop
 } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
-import profileImg from './assets/profile.png';
-import profileImgFlipped from './assets/profile-flipped.png';
+import profileImg from './assets/img/profile.png';
+import profileImgFlipped from './assets/img/profile-flipped.png';
+
+import awsSVG from './assets/icon/AWS-Dark.svg';
+import azureSVG from './assets/icon/Azure-Dark.svg';
+import terraformSVG from './assets/icon/Terraform-Dark.svg';
+import ansibleSVG from './assets/icon/Ansible.svg';
+import dockerSVG from './assets/icon/Docker.svg';
+import kubernetesSVG from './assets/icon/Kubernetes.svg';
+import elkSVG from './assets/icon/Elasticsearch-Dark.svg';
+import prometheusSVG from './assets/icon/Prometheus.svg';
+import grafanaSVG from './assets/icon/Grafana-Dark.svg';
+import kaliSVG from './assets/icon/Kali-Dark.svg';
+import linuxSVG from './assets/icon/Linux-Dark.svg';
+import ubuntuSVG from './assets/icon/Ubuntu-Dark.svg';
+import jenkinsSVG from './assets/icon/Jenkins-Dark.svg';
+import gitSVG from './assets/icon/Git.svg';
+import githubSVG from './assets/icon/Github-Dark.svg';
+import gitlabSVG from './assets/icon/GitLab-Dark.svg';
+import bitbucketSVG from './assets/icon/BitBucket-Dark.svg';
+import githubActionsSVG from './assets/icon/GithubActions-Dark.svg';
+import cloudFlareSVG from './assets/icon/Cloudflare-Dark.svg';
+import mongoSVG from './assets/icon/MongoDB.svg';
+import postgresSVG from './assets/icon/PostgreSQL-Dark.svg';
+import nginxSVG from './assets/icon/Nginx.svg';
+
+import htmlSVG from './assets/icon/HTML.svg';
+import cssSVG from './assets/icon/CSS.svg';
+import jsSVG from './assets/icon/JavaScript.svg';
+import cSVG from './assets/icon/C.svg';
+import cppSVG from './assets/icon/CPP.svg';
+import csharpSVG from './assets/icon/CS.svg';
+import javaSVG from './assets/icon/Java-Dark.svg';
+import springSVG from './assets/icon/Spring-Dark.svg';
+import powershellSVG from './assets/icon/Powershell-Dark.svg';
+import bashSVG from './assets/icon/Bash-Dark.svg';
+import pythonSVG from './assets/icon/Python-Dark.svg';
+import tensorflowSVG from './assets/icon/TensorFlow-Dark.svg';
+import sklearnSVG from './assets/icon/ScikitLearn-Dark.svg';
+import pytorchSVG from './assets/icon/PyTorch-Dark.svg';
+
+import markdownSVG from './assets/icon/Markdown-Dark.svg';
+import cypressSVG from './assets/icon/Cypress-Dark.svg';
+import seleniumSVG from './assets/icon/Selenium.svg';
+import postmanSVG from './assets/icon/Postman.svg';
+import notionSVG from './assets/icon/Notion-Dark.svg';
+import vscodeSVG from './assets/icon/VSCode-Dark.svg';
+import vsSVG from './assets/icon/VisualStudio-Dark.svg';
+import eclipseSVG from './assets/icon/Eclipse-Dark.svg';
+
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,23 +89,22 @@ function App() {
             className="fixed top-4 left-4 z-50 w-10 h-10 focus:outline-none"
             aria-label="Toggle Menu"
           >
-            <FontAwesomeIcon 
-              icon={isOpen ? faXmark : faBars} 
+            <FontAwesomeIcon
+              icon={isOpen ? faXmark : faBars}
               className={`text-2xl text-white hover:text-white transition-colors duration-200 hamburger-icon ${isOpen ? 'open' : ''}`}
             />
           </button>
 
           {/* Navigation Sidebar */}
           <nav
-            className={`fixed top-0 left-0 h-full w-64 bg-gradient-to-b from-AstrosNavy to-AstrosNavy shadow-lg transform transition-transform duration-300 ease-in-out ${
-              isOpen ? 'translate-x-0' : '-translate-x-full'
-            }`}
+            className={`fixed top-0 left-0 h-full w-64 bg-gradient-to-b from-AstrosNavy to-AstrosNavy shadow-lg transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'
+              }`}
           >
             <div className="pt-20 px-6">
               <ul className="space-y-6">
                 <li>
-                  <a 
-                    href="#home" 
+                  <a
+                    href="#home"
                     className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faHome} className="text-xl" />
@@ -60,8 +112,8 @@ function App() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="#project" 
+                  <a
+                    href="#project"
                     className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faCode} className="text-xl" />
@@ -69,8 +121,8 @@ function App() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="#techstack" 
+                  <a
+                    href="#techstack"
                     className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faLaptopCode} className="text-xl" />
@@ -78,8 +130,8 @@ function App() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="#achievement" 
+                  <a
+                    href="#achievement"
                     className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faTrophy} className="text-xl" />
@@ -87,8 +139,8 @@ function App() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="#education" 
+                  <a
+                    href="#education"
                     className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faGraduationCap} className="text-xl" />
@@ -100,20 +152,20 @@ function App() {
           </nav>
         </div>
         <div className="container--profile">
-          <div 
-            className="profile--image" 
+          <div
+            className="profile--image"
             style={{ backgroundImage: `url(${isHovered ? profileImgFlipped : profileImg})` }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           ></div>
-          <TextSlidingWrapper className="profile--intro">
+          <TextSlidingWrapper className="profile--intro mt-8">
             <button className="button" data-text="Awesome">
               <span className="actual-text">&nbsp;Hi!&nbsp;I'm&nbsp;TRAN&nbsp;HOANG&nbsp;KHANG&nbsp;</span>
               <span aria-hidden="true" className="hover-text">&nbsp;Hi!&nbsp;I'm&nbsp;TRAN&nbsp;HOANG&nbsp;KHANG&nbsp;</span>
             </button>
           </TextSlidingWrapper>
-          <p className="profile--role">Professional DevSecOps Engineer & Solution Architect Expert</p>
-          <TerminalTypingWrapper>
+          <p className="profile--role mt-4">Professional DevSecOps Engineer & Solution Architect Expert</p>
+          <TerminalTypingWrapper className="mt-8">
             <div className="card">
               <div className="wrap">
                 <div className="terminal">
@@ -164,7 +216,208 @@ function App() {
       </div>
       <div id="techstack" className="container--section">
         <h2 className="section-title">TECH STACK</h2>
-        
+        <div className="flex flex-wrap justify-center">
+          <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border">
+            <div className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faRoadBridge} className="text-xl" style={{ color: 'var(--color-smooth-blue)' }} />
+              <h4 className="py-2 font-bold font-mono uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Devops - Cloud - Infrastructure</h4>
+            </div>
+            <div className="flex flex-wrap justify-center items-center gap-4">
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={awsSVG} alt="My SVG" />
+                <p>AWS</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={azureSVG} alt="My SVG" />
+                <p>Azure</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={terraformSVG} alt="My SVG" />
+                <p>Terraform</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={ansibleSVG} alt="My SVG" />
+                <p>Ansible</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={dockerSVG} alt="My SVG" />
+                <p>Docker</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={kubernetesSVG} alt="My SVG" />
+                <p>Kubernetes</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={elkSVG} alt="My SVG" />
+                <p>ELK</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={prometheusSVG} alt="My SVG" />
+                <p>Prometheus</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={grafanaSVG} alt="My SVG" />
+                <p>Grafana</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={kaliSVG} alt="My SVG" />
+                <p>Kali</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={linuxSVG} alt="My SVG" />
+                <p>Linux</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={ubuntuSVG} alt="My SVG" />
+                <p>Ubuntu</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={jenkinsSVG} alt="My SVG" />
+                <p>Jenkins</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={gitSVG} alt="My SVG" />
+                <p>Git</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={githubSVG} alt="My SVG" />
+                <p>GitHub</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={gitlabSVG} alt="My SVG" />
+                <p>GitLab</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={bitbucketSVG} alt="My SVG" />
+                <p>BitBucket</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={githubActionsSVG} alt="My SVG" />
+                <p>GitHub Actions</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={cloudFlareSVG} alt="My SVG" />
+                <p>CloudFlare</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={mongoSVG} alt="My SVG" />
+                <p>MongoDB</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={postgresSVG} alt="My SVG" />
+                <p>PostgreSQL</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={nginxSVG} alt="My SVG" />
+                <p>Nginx</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border">
+            <div className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faSquareBinary} className="text-xl" style={{ color: 'var(--color-smooth-blue)' }} />
+              <h4 className="py-2 font-bold font-mono uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Programming language & Frameworks</h4>
+            </div>
+            <div className="flex flex-wrap justify-center items-center gap-4">
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={htmlSVG} alt="My SVG" />
+                <p>HTML</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={cssSVG} alt="My SVG" />
+                <p>CSS</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={jsSVG} alt="My SVG" />
+                <p>Javascript</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={cSVG} alt="My SVG" />
+                <p>C</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={cppSVG} alt="My SVG" />
+                <p>C++</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={csharpSVG} alt="My SVG" />
+                <p>C#</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={javaSVG} alt="My SVG" />
+                <p>Java</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={springSVG} alt="My SVG" />
+                <p>Spring</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={powershellSVG} alt="My SVG" />
+                <p>Powershell</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={bashSVG} alt="My SVG" />
+                <p>Bash</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={pythonSVG} alt="My SVG" />
+                <p>Python</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={tensorflowSVG} alt="My SVG" />
+                <p>Tensorflow</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={sklearnSVG} alt="My SVG" />
+                <p>Scikit-learn</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={pytorchSVG} alt="My SVG" />
+                <p>Pytorch</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border">
+            <div className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faLaptop} className="text-xl" style={{ color: 'var(--color-smooth-blue)' }} />
+              <h4 className="py-2 font-bold font-mono uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Testing - Documentation - Working</h4>
+            </div>
+            <div className="flex flex-wrap justify-center items-center gap-4">
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={markdownSVG} alt="My SVG" />
+                <p>Markdown</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={cypressSVG} alt="My SVG" />
+                <p>Cypress</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={seleniumSVG} alt="My SVG" />
+                <p>Selenium</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={postmanSVG} alt="My SVG" />
+                <p>Postman</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={notionSVG} alt="My SVG" />
+                <p>Notion</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={vscodeSVG} alt="My SVG" />
+                <p>VSCode</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={vsSVG} alt="My SVG" />
+                <p>Visual Studio</p>
+              </div>
+              <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
+                <img src={eclipseSVG} alt="My SVG" />
+                <p>Eclipse</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div id="achievement" className="container--section">
         <h2 className="section-title">{achievements.name}</h2>
