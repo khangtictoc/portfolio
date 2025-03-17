@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TextSlidingWrapper from './component/textSliding';
-import FlipCardWrapper from './component/flipCard';
 import TerminalTypingWrapper from './component/terminalTyping';
+import GlowingFlipCard from './component/glowingFlipCard';
 import achievements from './data/achievement';
 
 import {
@@ -423,34 +423,35 @@ function App() {
         <h2 className="section-title">{achievements.name}</h2>
         <div className="flex-container">
           {achievements.data.map((achievement, index) => (
-            <FlipCardWrapper key={index}>
-              <div className="flip-card">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front">
+            <GlowingFlipCard>
+            <div className="myCard">
+              <div className="innerCard">
+                <div className="frontSide">
+                  <p className="title">{achievement.name}</p>
+                  <p className="text-center">{achievement.result}</p>
+                </div>
+                <div className="backSide">
+                  <div className="mt-6">
                     <p className="title">{achievement.name}</p>
-                    <p className="text-center">{achievement.result}</p>
-                  </div>
-                  <div className="flip-card-back">
-                    <div className="mt-6">
-                      <p className="title">{achievement.name}</p>
-                      <div className="flex justify-items-start mt-2 ml-5 mr-5">
-                        <FontAwesomeIcon icon={faCalendar} className="text-xl" />
-                        <span className="font-medium ml-2">{achievement.yearDate}</span>
-                      </div>
-                      <div className="flex justify-items-start mt-2 ml-5 mr-5">
-                        <FontAwesomeIcon icon={faBuilding} className="text-xl" />
-                        <span className="font-medium ml-2">{achievement.organizer}</span>
-                      </div>
-                      <div className="flex justify-items-start mt-2 ml-5 mr-5">
-                        <FontAwesomeIcon icon={faCommentMedical} className="text-xl" />
-                        <span className="font-medium ml-2">{achievement.description}</span>
-                      </div>
+                    <div className="flex justify-items-start mt-2 ml-5 mr-5">
+                      <FontAwesomeIcon icon={faCalendar} className="text-xl" />
+                      <span className="font-medium ml-2 text-start">{achievement.yearDate}</span>
+                    </div>
+                    <div className="flex justify-items-start mt-2 ml-5 mr-5">
+                      <FontAwesomeIcon icon={faBuilding} className="text-xl" />
+                      <span className="font-medium ml-2 text-start">{achievement.organizer}</span>
+                    </div>
+                    <div className="flex justify-items-start mt-2 ml-5 mr-5">
+                      <FontAwesomeIcon icon={faCommentMedical} className="text-xl" />
+                      <span className="font-medium ml-2 text-start">{achievement.description}</span>
                     </div>
                   </div>
                 </div>
               </div>
-            </FlipCardWrapper>
+            </div>
+          </GlowingFlipCard> 
           ))}
+          
         </div>
       </div>
       <div id="education" className="container--section">
