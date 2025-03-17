@@ -212,15 +212,18 @@ function App() {
       <div id="home" className="container--section-home">
       </div>
       <div id="project" className="container--section">
+        <h2 className="section-title">About Me</h2>
+      </div>
+      <div id="project" className="container--section">
         <h2 className="section-title">PROJECT</h2>
       </div>
       <div id="techstack" className="container--section">
-        <h2 className="section-title">TECH STACK</h2>
+        <h2 className="section-title">Tech Stack</h2>
         <div className="flex flex-wrap justify-center">
           <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-2xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content">
             <div className="flex items-center space-x-2">
               <FontAwesomeIcon icon={faRoadBridge} className="text-xl mr-4" style={{ color: 'var(--color-smooth-blue)' }} />
-              <h4 className="py-2 font-bold font-mono uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Devops - Cloud Platform - Infrastructure</h4>
+              <h4 className="py-2 font-bold font-Montserrat uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Devops - Cloud Platform - Infrastructure</h4>
             </div>
             <div className="flex flex-wrap justify-center items-center gap-4">
               <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
@@ -316,7 +319,7 @@ function App() {
           <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content">
             <div className="flex items-center space-x-2">
               <FontAwesomeIcon icon={faSquareBinary} className="text-xl mr-4" style={{ color: 'var(--color-smooth-blue)' }} />
-              <h4 className="py-2 font-bold font-mono uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Programming language & Frameworks</h4>
+              <h4 className="py-2 font-bold font-Montserrat uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Programming language & Frameworks</h4>
             </div>
             <div className="flex flex-wrap justify-center items-center gap-4">
               <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
@@ -380,7 +383,7 @@ function App() {
           <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content">
             <div className="flex items-center space-x-2">
               <FontAwesomeIcon icon={faLaptop} className="text-xl mr-4" style={{ color: 'var(--color-smooth-blue)' }} />
-              <h4 className="py-2 font-bold font-mono uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Testing - Documentation - Working</h4>
+              <h4 className="py-2 font-bold font-Montserrat uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Testing - Documentation - Working</h4>
             </div>
             <div className="flex flex-wrap justify-center items-center gap-4">
               <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
@@ -420,8 +423,8 @@ function App() {
         </div>
       </div>
       <div id="achievement" className="container--section">
-        <h2 className="section-title mt-8 mb-8">{achievements.name}</h2>
-        <div className="flex-container mt-8">
+        <h2 className="section-title">{achievements.name}</h2>
+        <div className="flex-container mt-8 mb-8">
           {achievements.data.map((achievement, index) => (
             <GlowingFlipCard>
             <div className="myCard">
@@ -455,7 +458,7 @@ function App() {
         </div>
       </div>
       <div id="education" className="container--section">
-        <h2 className="section-title">EDUCATION</h2>
+        <h2 className="section-title">Education</h2>
         <p className="text-white">Hello world 4</p>
       </div>
     </div>
