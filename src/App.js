@@ -217,10 +217,10 @@ function App() {
       <div id="techstack" className="container--section">
         <h2 className="section-title">TECH STACK</h2>
         <div className="flex flex-wrap justify-center">
-          <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border">
+          <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-2xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content">
             <div className="flex items-center space-x-2">
-              <FontAwesomeIcon icon={faRoadBridge} className="text-xl" style={{ color: 'var(--color-smooth-blue)' }} />
-              <h4 className="py-2 font-bold font-mono uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Devops - Cloud - Infrastructure</h4>
+              <FontAwesomeIcon icon={faRoadBridge} className="text-xl mr-4" style={{ color: 'var(--color-smooth-blue)' }} />
+              <h4 className="py-2 font-bold font-mono uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Devops - Cloud Platform - Infrastructure</h4>
             </div>
             <div className="flex flex-wrap justify-center items-center gap-4">
               <div className="flex items-center space-x-2 mt-4" style={{ width: '125px' }}>
@@ -313,9 +313,9 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border">
+          <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content">
             <div className="flex items-center space-x-2">
-              <FontAwesomeIcon icon={faSquareBinary} className="text-xl" style={{ color: 'var(--color-smooth-blue)' }} />
+              <FontAwesomeIcon icon={faSquareBinary} className="text-xl mr-4" style={{ color: 'var(--color-smooth-blue)' }} />
               <h4 className="py-2 font-bold font-mono uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Programming language & Frameworks</h4>
             </div>
             <div className="flex flex-wrap justify-center items-center gap-4">
@@ -377,9 +377,9 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border">
+          <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content">
             <div className="flex items-center space-x-2">
-              <FontAwesomeIcon icon={faLaptop} className="text-xl" style={{ color: 'var(--color-smooth-blue)' }} />
+              <FontAwesomeIcon icon={faLaptop} className="text-xl mr-4" style={{ color: 'var(--color-smooth-blue)' }} />
               <h4 className="py-2 font-bold font-mono uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Testing - Documentation - Working</h4>
             </div>
             <div className="flex flex-wrap justify-center items-center gap-4">
@@ -427,8 +427,8 @@ function App() {
             <div className="myCard">
               <div className="innerCard">
                 <div className="frontSide">
-                  <p className="title">{achievement.name}</p>
-                  <p className="text-center">{achievement.result}</p>
+                  <p className="title uppercase">{achievement.name}</p>
+                  <p className="text-center text-xl">{achievement.result}</p>
                 </div>
                 <div className="backSide">
                   <div className="mt-6">

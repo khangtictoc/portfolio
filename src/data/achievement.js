@@ -3,7 +3,7 @@ const achievements = {
     "data": [
         {
             "name": "Net Challenge",
-            "result": "First Prize (2020)",
+            "result": "First Prize",
             "yearDate": "2020",
             "organizer": "University",
             "description": "A CCNA networking competition"

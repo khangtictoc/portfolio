@@ -36,7 +36,7 @@ const GlowingFlipCard = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
@@ -50,7 +50,7 @@ const GlowingFlipCard = styled.div`
 
   .frontSide,
   .frontSide::before {
-    background: linear-gradient(43deg, #714920 0%, #fff488 46%, #d09a14 100%);
+    background: linear-gradient(43deg, #062c43, #054569, #5591a9 100%);
   }
 
   .backSide,

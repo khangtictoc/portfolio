@@ -10,6 +10,7 @@
   --profile--font-family: "Raleway", serif;
   --color-chelsea-blue: #034694;
   --color-dark-blue: #1a2c80;
+  --gradient-colors: #062c43, #054569, #5591a9, #9ccddc;
 }
 
 .background-image {
@@ -199,7 +200,7 @@
   border: 3px solid;
   border-image-slice: 1;
   border-width: 3px;
-  border-image-source: linear-gradient(45deg, #062c43, #054569, #5591a9, #9ccddc);
+  border-image-source: linear-gradient(45deg, var(--gradient-colors));
 }
 
 .flex-3, .flex-2, .flex-1 {
