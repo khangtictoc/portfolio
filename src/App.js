@@ -420,8 +420,8 @@ function App() {
         </div>
       </div>
       <div id="achievement" className="container--section">
-        <h2 className="section-title">{achievements.name}</h2>
-        <div className="flex-container">
+        <h2 className="section-title mt-8 mb-8">{achievements.name}</h2>
+        <div className="flex-container mt-8">
           {achievements.data.map((achievement, index) => (
             <GlowingFlipCard>
             <div className="myCard">
