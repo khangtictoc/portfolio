@@ -160,8 +160,8 @@ function App() {
           ></div>
           <TextSlidingWrapper className="profile--intro mt-8">
             <button className="button" data-text="Awesome">
-              <span className="actual-text">&nbsp;Hi!&nbsp;I'm&nbsp;TRAN&nbsp;HOANG&nbsp;KHANG&nbsp;</span>
-              <span aria-hidden="true" className="hover-text">&nbsp;Hi!&nbsp;I'm&nbsp;TRAN&nbsp;HOANG&nbsp;KHANG&nbsp;</span>
+              <span className="actual-text font-mono">&nbsp;Hi!&nbsp;I'm&nbsp;TRAN&nbsp;HOANG&nbsp;KHANG&nbsp;</span>
+              <span aria-hidden="true" className="hover-text font-mono">&nbsp;Hi!&nbsp;I'm&nbsp;TRAN&nbsp;HOANG&nbsp;KHANG&nbsp;</span>
             </button>
           </TextSlidingWrapper>
           <p className="profile--role mt-4">Professional DevSecOps Engineer & Solution Architect Expert</p>
@@ -216,7 +216,7 @@ function App() {
       </div>
       <div id="project" className="container--section">
         <h2 className="section-title">PROJECT</h2>
-      </div>
+      </div>l
       <div id="techstack" className="container--section">
         <h2 className="section-title">Tech Stack</h2>
         <div className="flex flex-wrap justify-center">
