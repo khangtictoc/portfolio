@@ -13,6 +13,7 @@
   --gradient-colors: #062c43, #054569, #5591a9, #9ccddc;
 }
 
+
 .background-image {
   width: 100vw;
   height: 100vh;
@@ -203,9 +204,6 @@
   border-image-source: linear-gradient(45deg, var(--gradient-colors));
 }
 
-.flex-3, .flex-2, .flex-1 {
-  flex-grow: 1;
-}
 
 #techstack  img {
   width: 30px;

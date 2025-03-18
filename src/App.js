@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TextSlidingWrapper from './component/textSliding';
 import TerminalTypingWrapper from './component/terminalTyping';
 import GlowingFlipCard from './component/glowingFlipCard';
+import AchievementBadgeWrapper from './component/achivementBadge';
+
 import achievements from './data/achievement';
 
 import {
@@ -77,6 +79,14 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div>
       <div className="background-image"></div>
@@ -105,6 +115,7 @@ function App() {
                 <li>
                   <a
                     href="#home"
+                    onClick={(e) => handleSmoothScroll(e, '#home')}
                     className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faHome} className="text-xl" />
@@ -114,6 +125,7 @@ function App() {
                 <li>
                   <a
                     href="#project"
+                    onClick={(e) => handleSmoothScroll(e, '#project')}
                     className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faCode} className="text-xl" />
@@ -123,6 +135,7 @@ function App() {
                 <li>
                   <a
                     href="#techstack"
+                    onClick={(e) => handleSmoothScroll(e, '#techstack')}
                     className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faLaptopCode} className="text-xl" />
@@ -132,6 +145,7 @@ function App() {
                 <li>
                   <a
                     href="#achievement"
+                    onClick={(e) => handleSmoothScroll(e, '#achievement')}
                     className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faTrophy} className="text-xl" />
@@ -141,6 +155,7 @@ function App() {
                 <li>
                   <a
                     href="#education"
+                    onClick={(e) => handleSmoothScroll(e, '#education')}
                     className="nav-item flex items-center space-x-4 text-white hover:bg-AstrosNavy rounded-lg p-3 transition-all duration-200"
                   >
                     <FontAwesomeIcon icon={faGraduationCap} className="text-xl" />
@@ -220,7 +235,7 @@ function App() {
       <div id="techstack" className="container--section">
         <h2 className="section-title">Tech Stack</h2>
         <div className="flex flex-wrap justify-center">
-          <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-2xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content">
+          <div className="m-12 bg-white-700 max-w-[500px] rounded-2xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content grow-3">
             <div className="flex items-center space-x-2 border-b-2">
               <FontAwesomeIcon icon={faRoadBridge} className="text-xl mr-4" style={{ color: 'var(--color-smooth-blue)' }} />
               <h4 className="py-2 font-bold font-Montserrat uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Devops - Cloud Platform - Infrastructure</h4>
@@ -316,7 +331,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content">
+          <div className="m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content grow-2">
             <div className="flex items-center space-x-2 border-b-2">
               <FontAwesomeIcon icon={faSquareBinary} className="text-xl mr-4" style={{ color: 'var(--color-smooth-blue)' }} />
               <h4 className="py-2 font-bold font-Montserrat uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Programming language & Frameworks</h4>
@@ -380,7 +395,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="flex-1 m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content">
+          <div className="m-12 bg-white-700 max-w-[200px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content grow-1">
             <div className="flex items-center space-x-2 border-b-2">
               <FontAwesomeIcon icon={faLaptop} className="text-xl mr-4" style={{ color: 'var(--color-smooth-blue)' }} />
               <h4 className="py-2 font-bold font-Montserrat uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Testing - Documentation - Working</h4>
@@ -430,6 +445,17 @@ function App() {
             <div className="myCard">
               <div className="innerCard">
                 <div className="frontSide">
+                  <AchievementBadgeWrapper >
+                    <div className="container mt-2 mb-8">
+                      <svg className="svg-icon" height={100} preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width={100} x={0} xmlns="http://www.w3.org/2000/svg" y={0}>
+                        <path d="M62.11,53.93c22.582-3.125,22.304-23.471,18.152-29.929-4.166-6.444-10.36-2.153-10.36-2.153v-4.166H30.099v4.166s-6.194-4.291-10.36,2.153c-4.152,6.458-4.43,26.804,18.152,29.929l5.236,7.777v8.249s-.944,4.597-4.833,4.986c-3.903,.389-7.791,4.028-7.791,7.374h38.997c0-3.347-3.889-6.986-7.791-7.374-3.889-.389-4.833-4.986-4.833-4.986v-8.249l5.236-7.777Zm7.388-24.818s2.833-3.097,5.111-1.347c2.292,1.75,2.292,15.86-8.999,18.138l3.889-16.791Zm-44.108-1.347c2.278-1.75,5.111,1.347,5.111,1.347l3.889,16.791c-11.291-2.278-11.291-16.388-8.999-18.138Z">
+                        </path>
+                      </svg>  
+                      <div className="container__star">
+                        <div className="star-eight" />
+                      </div>
+                      <div /></div>
+                  </AchievementBadgeWrapper>
                   <p className="title uppercase">{achievement.name}</p>
                   <p className="text-center text-xl">{achievement.result}</p>
                 </div>
