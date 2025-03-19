@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-
-
 const TextSlidingWrapper = styled.div`
   /* === removing default button style ===*/
   .button {
@@ -11,6 +9,22 @@ const TextSlidingWrapper = styled.div`
     padding: 0;
     border: none;
     cursor: pointer;
+  }
+
+  /* Entrance animation */
+  @keyframes entranceAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &.entrance {
+    animation: entranceAnimation 1s ease-out;
   }
 
   /* button styling */

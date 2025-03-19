@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import TextSlidingWrapper from './component/textSliding';
-import TerminalTypingWrapper from './component/terminalTyping';
-import GlowingFlipCard from './component/glowingFlipCard';
-import AchievementBadgeWrapper from './component/achivementBadge';
+import TextSlidingWrapper from './components/item/textSliding';
+import TerminalTypingWrapper from './components/item/terminalTyping';
+import GlowingFlipCard from './components/item/glowingFlipCard';
+import AchievementBadgeWrapper from './components/item/achivementBadge';
+import AnimatedTestimonialsDemo from './components/block/testimonialMinimal';
 
 import achievements from './data/achievement';
 
@@ -173,14 +174,14 @@ function App() {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           ></div>
-          <TextSlidingWrapper className="profile--intro mt-8">
+          <TextSlidingWrapper className="profile--intro mt-8 entrance">
             <button className="button" data-text="Awesome">
               <span className="actual-text font-mono">&nbsp;Hi!&nbsp;I'm&nbsp;TRAN&nbsp;HOANG&nbsp;KHANG&nbsp;</span>
               <span aria-hidden="true" className="hover-text font-mono">&nbsp;Hi!&nbsp;I'm&nbsp;TRAN&nbsp;HOANG&nbsp;KHANG&nbsp;</span>
             </button>
           </TextSlidingWrapper>
-          <p className="profile--role mt-4">Professional DevSecOps Engineer & Solution Architect Expert</p>
-          <TerminalTypingWrapper className="mt-8">
+          <p className="profile--role mt-4 entrance">Professional DevSecOps Engineer & Solution Architect Expert</p>
+          <TerminalTypingWrapper className="mt-8 terminal-typing-entrance">
             <div className="card">
               <div className="wrap">
                 <div className="terminal">
@@ -228,14 +229,17 @@ function App() {
       </div>
       <div id="project" className="container--section">
         <h2 className="section-title">About Me</h2>
+        <AnimatedTestimonialsDemo>
+
+        </AnimatedTestimonialsDemo>
       </div>
       <div id="project" className="container--section">
         <h2 className="section-title">PROJECT</h2>
       </div>l
       <div id="techstack" className="container--section">
         <h2 className="section-title">Tech Stack</h2>
-        <div className="flex flex-wrap justify-center">
-          <div className="m-12 bg-white-700 max-w-[500px] rounded-2xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content grow-3">
+        <div className="flex flex-wrap justify-center gap-1">
+          <div className="m-8 bg-white-700 max-w-[450px] rounded-2xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content grow-3">
             <div className="flex items-center space-x-2 border-b-2">
               <FontAwesomeIcon icon={faRoadBridge} className="text-xl mr-4" style={{ color: 'var(--color-smooth-blue)' }} />
               <h4 className="py-2 font-bold font-Montserrat uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Devops - Cloud Platform - Infrastructure</h4>
@@ -331,7 +335,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="m-12 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content grow-2">
+          <div className="m-8 bg-white-700 max-w-[300px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content grow-2">
             <div className="flex items-center space-x-2 border-b-2">
               <FontAwesomeIcon icon={faSquareBinary} className="text-xl mr-4" style={{ color: 'var(--color-smooth-blue)' }} />
               <h4 className="py-2 font-bold font-Montserrat uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Programming language & Frameworks</h4>
@@ -395,7 +399,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="m-12 bg-white-700 max-w-[200px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content grow-1">
+          <div className="m-8 bg-white-700 max-w-[200px] rounded-xl hover:bg-white-900 hover:scale-110 duration-700 p-5 gradient-border box-content grow-1">
             <div className="flex items-center space-x-2 border-b-2">
               <FontAwesomeIcon icon={faLaptop} className="text-xl mr-4" style={{ color: 'var(--color-smooth-blue)' }} />
               <h4 className="py-2 font-bold font-Montserrat uppercase" style={{ color: 'var(--color-smooth-blue)' }}>Testing - Documentation - Working</h4>
@@ -485,7 +489,7 @@ function App() {
       </div>
       <div id="education" className="container--section">
         <h2 className="section-title">Education</h2>
-        <p className="text-white">Hello world 4</p>
+        <p className="text-black text-center">No education at all</p>
       </div>
     </div>
   );
