@@ -5,7 +5,6 @@ import TextSlidingWrapper from './components/item/textSliding';
 import TerminalTypingWrapper from './components/item/terminalTyping';
 import GlowingFlipCard from './components/item/glowingFlipCard';
 import AchievementBadgeWrapper from './components/item/achivementBadge';
-import AnimatedTestimonialsDemo from './components/block/testimonialMinimal';
 
 import achievements from './data/achievement';
 
@@ -229,9 +228,7 @@ function App() {
       </div>
       <div id="project" className="container--section">
         <h2 className="section-title">About Me</h2>
-        <AnimatedTestimonialsDemo>
 
-        </AnimatedTestimonialsDemo>
       </div>
       <div id="project" className="container--section">
         <h2 className="section-title">PROJECT</h2>
