@@ -7,6 +7,7 @@ import GlowingFlipCard from './components/item/glowingFlipCard';
 import AchievementBadgeWrapper from './components/item/achivementBadge';
 
 import achievements from './data/achievement';
+import aboutMe from './data/aboutme';
 
 import {
   faHome,
@@ -78,6 +79,7 @@ import eclipseSVG from './assets/icon/Eclipse-Dark.svg';
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [currentCard, setCurrentCard] = useState(0);
 
   const handleSmoothScroll = (e, targetId) => {
     e.preventDefault();
@@ -228,11 +230,44 @@ function App() {
       </div>
       <div id="project" className="container--section">
         <h2 className="section-title">About Me</h2>
-
+        <div className="carousel-container">
+          <div className="carousel flex justify-center items-center">
+            {aboutMe.data.map((card, index) => (
+              <div
+                key={index}
+                className={`carousel-card ${currentCard === index ? 'current' : currentCard === (index + 1) % 3 ? 'right' : 'left'}`}
+              >
+                <img src={card.image} alt={`Card ${index + 1}`} className="carousel-card-image" />
+              </div>
+            ))}
+          </div>
+          <div className='flex flex-col items-center justify-center w-[600px] gap-20'>
+            <div className="carousel-text">
+              {aboutMe.data.map((item, index) => (
+                <div
+                  key={index}
+                  className={`carousel-paragraph ${currentCard === index ? 'active' : 'hidden'}`}
+                >
+                  <h1>{item.name}</h1>
+                  <p>{item.description}</p>
+                </div>
+              ))}
+            </div>
+            <div className='flex justify-center gap-4'>
+              <button className="carousel-button" onClick={() => setCurrentCard((prev) => (prev - 1 + 3) % 3)}>
+                Previous
+              </button>
+              <button className="carousel-button" onClick={() => setCurrentCard((prev) => (prev + 1) % 3)}>
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
       <div id="project" className="container--section">
         <h2 className="section-title">PROJECT</h2>
-      </div>l
+
+      </div>
       <div id="techstack" className="container--section">
         <h2 className="section-title">Tech Stack</h2>
         <div className="flex flex-wrap justify-center gap-1">
@@ -443,45 +478,45 @@ function App() {
         <div className="flex-container mt-8 mb-8">
           {achievements.data.map((achievement, index) => (
             <GlowingFlipCard>
-            <div className="myCard">
-              <div className="innerCard">
-                <div className="frontSide">
-                  <AchievementBadgeWrapper >
-                    <div className="container mt-2 mb-8">
-                      <svg className="svg-icon" height={100} preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width={100} x={0} xmlns="http://www.w3.org/2000/svg" y={0}>
-                        <path d="M62.11,53.93c22.582-3.125,22.304-23.471,18.152-29.929-4.166-6.444-10.36-2.153-10.36-2.153v-4.166H30.099v4.166s-6.194-4.291-10.36,2.153c-4.152,6.458-4.43,26.804,18.152,29.929l5.236,7.777v8.249s-.944,4.597-4.833,4.986c-3.903,.389-7.791,4.028-7.791,7.374h38.997c0-3.347-3.889-6.986-7.791-7.374-3.889-.389-4.833-4.986-4.833-4.986v-8.249l5.236-7.777Zm7.388-24.818s2.833-3.097,5.111-1.347c2.292,1.75,2.292,15.86-8.999,18.138l3.889-16.791Zm-44.108-1.347c2.278-1.75,5.111,1.347,5.111,1.347l3.889,16.791c-11.291-2.278-11.291-16.388-8.999-18.138Z">
-                        </path>
-                      </svg>  
-                      <div className="container__star">
-                        <div className="star-eight" />
+              <div className="myCard">
+                <div className="innerCard">
+                  <div className="frontSide">
+                    <AchievementBadgeWrapper >
+                      <div className="container mt-2 mb-8">
+                        <svg className="svg-icon" height={100} preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width={100} x={0} xmlns="http://www.w3.org/2000/svg" y={0}>
+                          <path d="M62.11,53.93c22.582-3.125,22.304-23.471,18.152-29.929-4.166-6.444-10.36-2.153-10.36-2.153v-4.166H30.099v4.166s-6.194-4.291-10.36,2.153c-4.152,6.458-4.43,26.804,18.152,29.929l5.236,7.777v8.249s-.944,4.597-4.833,4.986c-3.903,.389-7.791,4.028-7.791,7.374h38.997c0-3.347-3.889-6.986-7.791-7.374-3.889-.389-4.833-4.986-4.833-4.986v-8.249l5.236-7.777Zm7.388-24.818s2.833-3.097,5.111-1.347c2.292,1.75,2.292,15.86-8.999,18.138l3.889-16.791Zm-44.108-1.347c2.278-1.75,5.111,1.347,5.111,1.347l3.889,16.791c-11.291-2.278-11.291-16.388-8.999-18.138Z">
+                          </path>
+                        </svg>
+                        <div className="container__star">
+                          <div className="star-eight" />
+                        </div>
+                        <div /></div>
+                    </AchievementBadgeWrapper>
+                    <p className="title uppercase">{achievement.name}</p>
+                    <p className="text-center text-xl">{achievement.result}</p>
+                  </div>
+                  <div className="backSide">
+                    <div className="mt-6">
+                      <p className="title">{achievement.name}</p>
+                      <div className="flex justify-items-start mt-2 ml-5 mr-5">
+                        <FontAwesomeIcon icon={faCalendar} className="text-xl" />
+                        <span className="font-medium ml-2 text-start">{achievement.yearDate}</span>
                       </div>
-                      <div /></div>
-                  </AchievementBadgeWrapper>
-                  <p className="title uppercase">{achievement.name}</p>
-                  <p className="text-center text-xl">{achievement.result}</p>
-                </div>
-                <div className="backSide">
-                  <div className="mt-6">
-                    <p className="title">{achievement.name}</p>
-                    <div className="flex justify-items-start mt-2 ml-5 mr-5">
-                      <FontAwesomeIcon icon={faCalendar} className="text-xl" />
-                      <span className="font-medium ml-2 text-start">{achievement.yearDate}</span>
-                    </div>
-                    <div className="flex justify-items-start mt-2 ml-5 mr-5">
-                      <FontAwesomeIcon icon={faBuilding} className="text-xl" />
-                      <span className="font-medium ml-2 text-start">{achievement.organizer}</span>
-                    </div>
-                    <div className="flex justify-items-start mt-2 ml-5 mr-5">
-                      <FontAwesomeIcon icon={faCommentMedical} className="text-xl" />
-                      <span className="font-medium ml-2 text-start">{achievement.description}</span>
+                      <div className="flex justify-items-start mt-2 ml-5 mr-5">
+                        <FontAwesomeIcon icon={faBuilding} className="text-xl" />
+                        <span className="font-medium ml-2 text-start">{achievement.organizer}</span>
+                      </div>
+                      <div className="flex justify-items-start mt-2 ml-5 mr-5">
+                        <FontAwesomeIcon icon={faCommentMedical} className="text-xl" />
+                        <span className="font-medium ml-2 text-start">{achievement.description}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </GlowingFlipCard> 
+            </GlowingFlipCard>
           ))}
-          
+
         </div>
       </div>
       <div id="education" className="container--section">
