@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.b10b6637.css",
-    "main.js": "/portfolio/static/js/main.03e31ba1.js",
+    "main.css": "/portfolio/static/css/main.12561b2f.css",
+    "main.js": "/portfolio/static/js/main.1799232a.js",
     "static/js/488.21a3b654.chunk.js": "/portfolio/static/js/488.21a3b654.chunk.js",
     "static/media/background.jpg": "/portfolio/static/media/background.2be5938769c3125f0a34.jpg",
     "static/media/profile-flipped.png": "/portfolio/static/media/profile-flipped.326a99cffe24e6e59f61.png",
     "static/media/profile.png": "/portfolio/static/media/profile.bf0602b4b027a4be462b.png",
+    "static/media/lan_nguyen.jpg": "/portfolio/static/media/lan_nguyen.c1eedf49ba2d19573183.jpg",
     "static/media/Jenkins-Dark.svg": "/portfolio/static/media/Jenkins-Dark.eb2f5aaad764c37db416a7f85c5d2f3f.svg",
     "static/media/Kali-Dark.svg": "/portfolio/static/media/Kali-Dark.961bd99856a972d829340cf2ff5a4c81.svg",
     "static/media/ScikitLearn-Dark.svg": "/portfolio/static/media/ScikitLearn-Dark.17d8d5adde4d048744d2617fa2db9938.svg",
@@ -51,12 +52,12 @@
     "static/media/Terraform-Dark.svg": "/portfolio/static/media/Terraform-Dark.514df570b40ca0790beb51fe156d01c3.svg",
     "static/media/Markdown-Dark.svg": "/portfolio/static/media/Markdown-Dark.2055825dc19f864ce4d55a0237c3c8b0.svg",
     "static/media/TensorFlow-Dark.svg": "/portfolio/static/media/TensorFlow-Dark.05eeef915cc89a8400db7fec9b21e70e.svg",
-    "main.b10b6637.css.map": "/portfolio/static/css/main.b10b6637.css.map",
-    "main.03e31ba1.js.map": "/portfolio/static/js/main.03e31ba1.js.map",
+    "main.12561b2f.css.map": "/portfolio/static/css/main.12561b2f.css.map",
+    "main.1799232a.js.map": "/portfolio/static/js/main.1799232a.js.map",
     "488.21a3b654.chunk.js.map": "/portfolio/static/js/488.21a3b654.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b10b6637.css",
-    "static/js/main.03e31ba1.js"
+    "static/css/main.12561b2f.css",
+    "static/js/main.1799232a.js"
   ]
 }
